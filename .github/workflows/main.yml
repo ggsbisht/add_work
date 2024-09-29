@@ -30,6 +30,12 @@ jobs:
       - name: Export Azure Data Factory
         id: export
         uses: Azure/data-factory-export-action@v1.2.0
+
+      - name: List files in ARM template directory
+        run: |
+              echo "Listing files in path: ${{ steps.export.outputs.arm-template-directory }}"
+              ls -la ${{ steps.export.outputs.arm-template-directory }}
+
       
                   
       - uses: actions/upload-artifact@v3
