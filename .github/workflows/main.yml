@@ -46,7 +46,7 @@ jobs:
           name: adf-armtemplate
           path: ${{ steps.export.outputs.arm-template-directory }}
           if-no-files-found: error
-          nclude-hidden-files: false
+          include-hidden-files: false
 
   
   deploy:
