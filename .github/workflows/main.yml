@@ -20,16 +20,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
          node-version: '20.x' 
-         
-      - name: Export ARM template
-        id: export1
-        run: |
-          echo "::set-output name=arm-template-directory::adf_publish/factory/dev-datafact-gs"
-
-      - name: Check ARM template path
-        run: |
-          echo "Checking path: ${{ steps.export1.outputs.arm-template-directory }}"
-          
+             
       - name: Validate ARM template
         uses: Azure/data-factory-validate-action@v1.1.6
         with:
