@@ -39,9 +39,7 @@ jobs:
         run: |
               echo "Listing files in path: ${{ steps.export.outputs.arm-template-directory }}"
               ls -la ${{ steps.export.outputs.arm-template-directory }}
-
-      
-                  
+       
       - uses: actions/upload-artifact@v3
         with:
           name: adf-armtemplate
