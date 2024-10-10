@@ -28,10 +28,7 @@ jobs:
 
       - name: npm install
         run: npm install
-
-      - name: build
-        run: npm run build
-
+        
       - name: pack
         run: npm pack
         working-directory: my_root/${{ github.event.inputs.package }}
