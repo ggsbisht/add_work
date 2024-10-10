@@ -37,7 +37,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: adf-armtemplate
-          path: my_root/${{ github.event.inputs.package }}/*.tgz
+          path: my_root/${{ github.event.inputs.package }}
           if-no-files-found: error
           include-hidden-files: false
 
