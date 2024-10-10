@@ -29,7 +29,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ github.event.inputs.package }}
-          path: my_root/${{ github.event.inputs.package }}/*.tgz
+          path: my_root/${{ github.event.inputs.package }}
           if-no-files-found: error
           include-hidden-files: false
 
