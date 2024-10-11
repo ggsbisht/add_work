@@ -54,6 +54,7 @@ jobs:
         with:
           name: adf-armtemplate
           path: my_root/
+          patterns: '**/*.jar'
 
       - name: Deploy resources
         uses: Azure/data-factory-deploy-action@v1.2.0
