@@ -38,6 +38,7 @@ jobs:
         with:
           name: adf-armtemplate
           path: my_root/${{ github.event.inputs.package }}
+          run-id: ${{ github.event.workflow_run.id }}
           if-no-files-found: error
           include-hidden-files: false
 
