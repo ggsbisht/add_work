@@ -27,7 +27,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: adfarmtemplate
-          path: ${{github.workspace}}/my_root/
+          path: ./
           if-no-files-found: error
           include-hidden-files: false
 
@@ -43,7 +43,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: adfarmtemplate
-          path: ${{github.workspace}}/my_root/
+          path: ./
           
       - name: Deploy resources
         uses: Azure/data-factory-deploy-action@v1.2.0
