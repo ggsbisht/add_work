@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-
-run-name: Publish NPM - ${{ github.event.inputs.package }}
       
 permissions:
   id-token: write
@@ -14,33 +12,22 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest  
-    environment: npm-publish
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         
       - name: verify package exists
-        run: ls my_root/${{ github.event.inputs.package }}
+        run: ls my_root
         
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
          node-version: '20.x' 
-
-      - name: npm install
-        run: npm install
-        
-      - name: Install dependencies
-        working-directory: ${{github.workspace}}/my_root/${{ github.event.inputs.package }}
-        run: npm install
-        
-      - name: Print package variable
-        run: echo "Package_name ${{ github.event.inputs.package }}"
                            
       - uses: actions/upload-artifact@v4
         with:
           name: adfarmtemplate
-          path: ${{github.workspace}}/my_root/${{ github.event.inputs.package }}
+          path: ${{github.workspace}}/my_root/
           if-no-files-found: error
           include-hidden-files: false
 
@@ -56,8 +43,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: adfarmtemplate
-          path: ${{github.workspace}}/my_root/${{ github.event.inputs.package }}
-
+          path: ${{github.workspace}}/my_root/
       - name: Deploy resources
         uses: Azure/data-factory-deploy-action@v1.2.0
         with:
