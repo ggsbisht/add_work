@@ -28,8 +28,13 @@
 				"typeProperties": {
 					"waitTimeInSeconds": 1
 				}
-			}
-		],
-		"annotations": []
-	}
-}
+			},
+			{
+				"name": "Wait4",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
+      }
