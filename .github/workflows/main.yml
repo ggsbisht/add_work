@@ -44,6 +44,7 @@ jobs:
         with:
           name: adfarmtemplate
           path: ${{github.workspace}}/my_root/
+          
       - name: Deploy resources
         uses: Azure/data-factory-deploy-action@v1.2.0
         with:
