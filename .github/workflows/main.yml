@@ -31,13 +31,13 @@ jobs:
         run: npm install
         
       - name: Install dependencies
-        working-directory: my_root/${{ github.event.inputs.package }}
+        working-directory: ${{github.workspace}}/my_root/${{ github.event.inputs.package }}
         run: npm install
                            
       - uses: actions/upload-artifact@v4
         with:
           name: adf-armtemplate
-          path: my_root/${{ github.event.inputs.package }}
+          path: ${{github.workspace}}/my_root/${{ github.event.inputs.package }}
           if-no-files-found: error
           include-hidden-files: false
 
