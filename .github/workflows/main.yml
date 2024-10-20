@@ -36,7 +36,7 @@ jobs:
                            
       - uses: actions/upload-artifact@v4
         with:
-          name: adf-armtemplate
+          name: adfarmtemplate
           path: ${{github.workspace}}/my_root/${{ github.event.inputs.package }}
           if-no-files-found: error
           include-hidden-files: false
@@ -52,7 +52,7 @@ jobs:
       - name: Download ARM template
         uses: actions/download-artifact@v4
         with:
-          name: adf-armtemplate
+          name: adfarmtemplate
           path: ${{github.workspace}}/my_root/${{ github.event.inputs.package }}
 
       - name: Deploy resources
